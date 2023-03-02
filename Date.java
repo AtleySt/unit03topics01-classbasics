@@ -9,25 +9,45 @@ public class Date {
         year = curYear;
     }
 
+    public int getMonth() {
+        return month;
+    }
+    public int getDay() {
+        return day;
+    }
+    public int getYear() {
+        return year;
+    }
+
     public String toString() {
         String result = "";
-        if (month < 10) {
-            result+="0"+month+"/";
+        if (getMonth() < 10) {
+            result+="0"+getMonth()+"/";
         } else {
-            result+=month+"/";
+            result+=getMonth()+"/";
         }
-        if (day < 10) {
-            result+="0"+day+"/";
+        if (getDay() < 10) {
+            result+="0"+getDay()+"/";
         } else {
-            result+=day+"/";
+            result+=getDay()+"/";
         }
-        result+=year;
+        if (getYear()<1000 && getYear() >= 100) {
+            result += "0"+getYear();
+        } else if (getYear()<100 && getYear()>=10) {
+            result += "00"+getYear();
+        } else if (getYear()<10) {
+            result += "000"+getYear();
+        } else {
+            result+=getYear();
+        }
 
         return result;
         
     }
     public static void main(String[] args) {
-        Date today = new Date(3,1,2023);
+        Date today = new Date(3,2,2023);
+        Date d2 = new Date(12, 3, 2);
+        System.out.println(d2);
         System.out.println(today);
     }
 }
