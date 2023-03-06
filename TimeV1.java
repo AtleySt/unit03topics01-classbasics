@@ -1,5 +1,3 @@
-import java.sql.Time;
-
 public class TimeV1 {
     private int hour;
     private int minute;
@@ -46,3 +44,4 @@ public class TimeV1 {
         System.out.println(time);
     }
 }
+// nice work
